@@ -1,0 +1,9 @@
+[
+    { "id": 1, "nombre": "Nagaraku pelo por pelo tam. 5mm a 14mm", "precio": 5000, "stock": 50 },
+    { "id": 2, "nombre": "Cinta hipoalergenica", "precio": 1500, "stock": 15 },
+    { "id": 3, "nombre": "Pinza recta", "precio": 15000, "stock": 6 },
+    { "id": 4, "nombre": "Pinza curva", "precio": 19000, "stock": 10 },
+    { "id": 5, "nombre": "Adhesivo cherimoya", "precio": 27000, "stock": 5 },
+    { "id": 6, "nombre": "Lash shampoo", "precio": 4000, "stock": 10 },
+    { "id": 7, "nombre": "Parches hidrogel x1 uni", "precio": 180, "stock": 100 }
+]
