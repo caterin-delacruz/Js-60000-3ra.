@@ -73,6 +73,8 @@ body {
   top: 0;
   right: -300px; /* Oculto fuera de la vista */
   width: 300px;
+  overflow-y: auto;
+  padding-bottom: 50px; 
   height: 100%;
   background-color: #f4f4f4;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -243,3 +245,24 @@ body {
   background-color: #555;
   color: white;
 }
+
+.cart__clear {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cart__clear:hover {
+  background-color: #c9302c;
+}
+
+.hidden {
+  display: none;
+}
+

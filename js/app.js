@@ -1,4 +1,4 @@
-import { addToCart, createProduct, removeFromCart } from "./cart.js";
+import { addToCart, createProduct, removeFromCart, clearCart  } from "./cart.js";
 import { renderProducts, updateCartUi } from "./ui.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,10 +13,18 @@ const cartCloseButton = document.querySelector(".cart__close");
 
 cartOpenButton.addEventListener("click", () => {
   cartSidebar.classList.add("cart__sidebar--open");
+  cartOpenButton.classList.add("hidden");
 });
 
 cartCloseButton.addEventListener("click", () => {
   cartSidebar.classList.remove("cart__sidebar--open");
+  cartOpenButton.classList.remove("hidden");
+});
+
+// Botón para vaciar carrito
+document.querySelector(".cart__clear").addEventListener("click", () => {
+  clearCart(); // Vaciar el carrito
+  updateCartUi(); // Actualizar UI
 });
 
 // Manejo de la adición de productos al carrito
@@ -29,12 +37,18 @@ document.getElementById("productList").addEventListener("click", (event) => {
 
     const product = createProduct(productId, productTitle, productPrice);
 
-    addToCart(product, 1);  // Agregar producto al carrito
-    updateCartUi();  // Actualizar la UI
+    addToCart(product, 1); // Agregar producto al carrito
+    updateCartUi(); // Actualizar UI
+
+    // Deshabilitar botón
+    event.target.disabled = true;
+    event.target.textContent = "En el carrito";
   }
 });
 
 document.querySelector(".cart__container").addEventListener("click", (event) => {
+  const cartItemsString = localStorage.getItem('cartItems');
+  const cartItems = JSON.parse(cartItemsString);
   if (event.target.classList.contains("cart__remove")) {
     const productId = event.target
       .closest(".cart__item")
